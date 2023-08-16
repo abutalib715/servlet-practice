@@ -8,9 +8,18 @@
         <servlet-name>first</servlet-name>
         <servlet-class>com.talib.servletapp.FirstServlet</servlet-class>
     </servlet>
-    
+
+    <servlet>
+        <servlet-name>second</servlet-name>
+        <servlet-class>com.talib.servletapp.SecondServlet</servlet-class>
+    </servlet>
+
     <servlet-mapping>
         <servlet-name>first</servlet-name>
         <url-pattern>/web</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>second</servlet-name>
+        <url-pattern>/second</url-pattern>
     </servlet-mapping>
 </web-app>

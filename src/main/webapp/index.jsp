@@ -9,5 +9,6 @@
 </h1>
 <br/>
 <a href="web">First Servlet</a>
+<a href="second">Second Servlet</a>
 </body>
 </html>
