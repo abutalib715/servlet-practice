@@ -14,6 +14,11 @@
         <servlet-class>com.talib.servletapp.SecondServlet</servlet-class>
     </servlet>
 
+    <servlet>
+        <servlet-name>third</servlet-name>
+        <servlet-class>com.talib.servletapp.ThirdServlet</servlet-class>
+    </servlet>
+
     <servlet-mapping>
         <servlet-name>first</servlet-name>
         <url-pattern>/web</url-pattern>
@@ -21,5 +26,9 @@
     <servlet-mapping>
         <servlet-name>second</servlet-name>
         <url-pattern>/second</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>third</servlet-name>
+        <url-pattern>/third</url-pattern>
     </servlet-mapping>
 </web-app>
