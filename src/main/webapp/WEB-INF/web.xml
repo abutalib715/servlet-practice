@@ -19,6 +19,11 @@
         <servlet-class>com.talib.servletapp.ThirdServlet</servlet-class>
     </servlet>
 
+    <servlet>
+        <servlet-name>register</servlet-name>
+        <servlet-class>com.talib.servletapp.RegisterServlet</servlet-class>
+    </servlet>
+
     <servlet-mapping>
         <servlet-name>first</servlet-name>
         <url-pattern>/web</url-pattern>
@@ -30,5 +35,9 @@
     <servlet-mapping>
         <servlet-name>third</servlet-name>
         <url-pattern>/third</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>register</servlet-name>
+        <url-pattern>/register</url-pattern>
     </servlet-mapping>
 </web-app>

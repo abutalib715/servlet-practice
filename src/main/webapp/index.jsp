@@ -30,8 +30,8 @@
             <tr>
                 <td>Select Gender</td>
                 <td>
-                    <input type="radio" name="gender" value="male">Male &n&nbps; &n&nbps;
-                    <input type="radio" name="gender" value="female">Female &n&nbps; &n&nbps;
+                    <input type="radio" name="gender" value="male">Male &nbsp;
+                    <input type="radio" name="gender" value="female">Female
                 </td>
             </tr>
             <tr>
@@ -47,7 +47,7 @@
             </tr>
             <tr>
                 <td>
-                    <input type="checkbox" name="terms">
+                    <input type="checkbox" name="terms" value="checked">
                 </td>
                 <td>
                     Accept Terms & Condition
