@@ -1,5 +1,6 @@
 package com.talib.servletapp;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -29,11 +30,21 @@ public class RegisterServlet extends HttpServlet {
                 out.println("<h3>Password: " + password + "</h3>");
                 out.println("<h3>Gender: " + gender + "</h3>");
                 out.println("<h3>Course: " + course + "</h3>");
+
+                RequestDispatcher rd = req.getRequestDispatcher("success");
+                rd.forward(req, resp);
             } else {
                 out.println("<h3>Please accept terms and conditions!</h3>");
+                RequestDispatcher rd = req.getRequestDispatcher("index.jsp");
+
+                rd.include(req, resp);
             }
         } else {
             out.println("<h3>Please accept terms and conditions!</h3>");
+
+            RequestDispatcher rd = req.getRequestDispatcher("index.jsp");
+
+            rd.include(req, resp);
         }
 
 
