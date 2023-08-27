@@ -28,6 +28,16 @@
         <servlet-name>success</servlet-name>
         <servlet-class>com.talib.servletapp.SuccessServlet</servlet-class>
     </servlet>
+    
+    <servlet>
+        <servlet-name>servletOne</servlet-name>
+        <servlet-class>com.talib.servletapp.attribute.ServletOne</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>servletTwo</servlet-name>
+        <servlet-class>com.talib.servletapp.attribute.ServletTwo</servlet-class>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>first</servlet-name>
@@ -48,6 +58,16 @@
     <servlet-mapping>
         <servlet-name>success</servlet-name>
         <url-pattern>/success</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>servletOne</servlet-name>
+        <url-pattern>/servlet-one</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>servletTwo</servlet-name>
+        <url-pattern>/servlet-two</url-pattern>
     </servlet-mapping>
     
     
