@@ -20,7 +20,7 @@
     </servlet>
 
     <servlet>
-        <servlet-name>register</servlet-name>
+        <servlet-name>test-register</servlet-name>
         <servlet-class>com.talib.servletapp.RegisterServlet</servlet-class>
     </servlet>
 
@@ -49,6 +49,11 @@
         <servlet-class>com.talib.servletapp.cookies.ServletTwo</servlet-class>
     </servlet>
 
+    <servlet>
+        <servlet-name>register</servlet-name>
+        <servlet-class>com.talib.servletapp.registration.Register</servlet-class>
+    </servlet>
+
 
     <servlet-mapping>
         <servlet-name>first</servlet-name>
@@ -63,8 +68,8 @@
         <url-pattern>/third</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>register</servlet-name>
-        <url-pattern>/register</url-pattern>
+        <servlet-name>test-register</servlet-name>
+        <url-pattern>/test-register</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>success</servlet-name>
@@ -89,6 +94,11 @@
     <servlet-mapping>
         <servlet-name>cookies-two</servlet-name>
         <url-pattern>/cookie-two</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>register</servlet-name>
+        <url-pattern>/register</url-pattern>
     </servlet-mapping>
 
 
