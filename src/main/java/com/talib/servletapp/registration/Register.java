@@ -14,7 +14,7 @@ import java.sql.SQLException;
 
 public class Register extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html");
 
         String username = req.getParameter("username");
@@ -22,12 +22,10 @@ public class Register extends HttpServlet {
         String email = req.getParameter("email");
 
         PrintWriter out = resp.getWriter();
-        out.println(username);
-        out.println(email);
-        out.println(password);
 
 
         try {
+            Thread.sleep(3000);
             Class.forName("com.mysql.cj.jdbc.Driver"); // Check driver class name
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/servlet_registration", "root", "");
 
@@ -43,14 +41,14 @@ public class Register extends HttpServlet {
                 int rowsAffected = stmt.executeUpdate();
 
                 if (rowsAffected > 0) {
-                    out.println("Successfully Done!");
+                    out.println("success");
                 } else {
-                    out.println("No rows were affected. Insertion failed.");
+                    out.println("error");
                 }
 
                 conn.close(); // Close the connection when done
             } else {
-                out.println("Failed to establish a database connection.");
+                out.println("error");
             }
         } catch (ClassNotFoundException ex) {
             ex.printStackTrace();
@@ -58,6 +56,8 @@ public class Register extends HttpServlet {
         } catch (SQLException ex) {
             ex.printStackTrace();
             out.println("Error: " + ex.getMessage());
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
         }
 
 
