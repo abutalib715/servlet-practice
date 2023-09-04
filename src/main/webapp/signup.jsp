@@ -16,7 +16,7 @@
     <input type="text" name="username" placeholder="Username"><br><br>
     <input type="password" name="password" placeholder="Password"><br><br>
     <input type="email" name="email" placeholder="Email"><br><br>
-
+    <input type="file" name="image"><br><br>
     <button type="submit">Submit</button>
 </form>
 
@@ -33,7 +33,8 @@
 
         $("#myform").on("submit", function (event) {
             event.preventDefault();
-            var formData = $(this).serialize();
+            // var formData = $(this).serialize(); // Use this for text type form data only
+            let formData = new FormData(this); // Use this if file uploading in form
             console.log(formData);
 
             $(".loader").show();
@@ -49,7 +50,7 @@
                     $(".loader").hide();
                     $("#myform").show();
 
-                    if(data.trim() === "success")
+                    if (data.trim() === "success")
                         $("#message").html("Successfully Saved");
                     else
                         $("#message").html("Something Went Wrong!");
@@ -60,7 +61,9 @@
                     $("#message").html("Something Went Wrong!");
                     $(".loader").hide();
                     $("#myform").show();
-                }
+                },
+                processData: false, // Use this if file uploading in form
+                contentType: false // Use this if file uploading in form
             })
 
         })
