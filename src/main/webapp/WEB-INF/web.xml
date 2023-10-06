@@ -54,6 +54,16 @@
         <servlet-class>com.talib.servletapp.registration.Register</servlet-class>
     </servlet>
 
+    <servlet>
+        <servlet-name>ProfileServlet</servlet-name>
+        <servlet-class>com.talib.servletapp.ProfileServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>OrderServlet</servlet-name>
+        <servlet-class>com.talib.servletapp.OrderServlet</servlet-class>
+    </servlet>
+
 
     <servlet-mapping>
         <servlet-name>first</servlet-name>
@@ -101,6 +111,16 @@
         <url-pattern>/register</url-pattern>
     </servlet-mapping>
 
+    <servlet-mapping>
+        <servlet-name>ProfileServlet</servlet-name>
+        <url-pattern>/profile-servlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>OrderServlet</servlet-name>
+        <url-pattern>/order-servlet</url-pattern>
+    </servlet-mapping>
+
 
     <welcome-file-list>
         <welcome-file>home.html</welcome-file>
@@ -110,4 +130,26 @@
         <error-code>404</error-code>
         <location>/error_404.jsp</location>
     </error-page>
+
+
+<!--    FILTER CONFIGURATION-->
+    <filter>
+        <filter-name>myfilter</filter-name>
+        <filter-class>com.talib.servletapp.filter.MyFilter</filter-class>
+    </filter>
+    <filter>
+        <filter-name>authfilter</filter-name>
+        <filter-class>com.talib.servletapp.filter.AuthFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>myfilter</filter-name>
+        <servlet-name>ProfileServlet</servlet-name>
+<!--        <url-pattern>/profile-servlet</url-pattern>-->
+    </filter-mapping>
+
+    <filter-mapping>
+        <filter-name>authfilter</filter-name>
+        <servlet-name>ProfileServlet</servlet-name>
+    </filter-mapping>
 </web-app>
