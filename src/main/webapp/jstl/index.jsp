@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <html>
 <head>
     <title>Index Page</title>
@@ -52,6 +53,15 @@
 </c:url>
 
 <%--Redirect--%>
-<c:redirect url="${myurl}"></c:redirect>
+<%--<c:redirect url="${myurl}"></c:redirect>--%>
+
+
+
+
+<%--Functions Tag--%>
+
+<c:set var="myname" value="Talib"></c:set>
+<h3>My name length is <c:out value="${fn:length(myname)}"></c:out></h3>
+
 </body>
 </html>
