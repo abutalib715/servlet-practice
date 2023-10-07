@@ -8,6 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
 <html>
 <head>
     <title>Index Page</title>
@@ -59,9 +60,29 @@
 
 
 <%--Functions Tag--%>
-
 <c:set var="myname" value="Talib"></c:set>
 <h3>My name length is <c:out value="${fn:length(myname)}"></c:out></h3>
+
+
+<%--SQL tags--%>
+<sql:setDataSource var="ds" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3306/testdb"></sql:setDataSource>
+<sql:query var="users" dataSource="${ds}">select * from users;</sql:query>
+
+<table>
+    <tr>
+        <td>Name</td>
+        <td>Email</td>
+        <td>Address</td>
+    </tr>
+    <c:forEach items="${users}" var="user">
+        <tr>
+            <td><c:out value="${user.name}"></c:out></td>
+            <td><c:out value="${user.email}"></c:out></td>
+            <td><c:out value="${user.address}"></c:out></td>
+        </tr>
+    </c:forEach>
+</table>
+
 
 </body>
 </html>
